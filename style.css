@@ -45,7 +45,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focu
 /* Nav */
 .navbar .btn-navbar {
 	margin: 20px;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0);
 	border: none;
 	padding: 11.5px 10px;
 }
