@@ -5,8 +5,8 @@
 				maptype: 'ROADMAP',
 				markers: [
 					{
-						address: 'Jalan Terusan Jakarta, Bandung City, West Java 40291',
-						html: '<p>Jalan Terusan Jakarta, Bandung City, West Java 40291</p><p>+62 123-456-7890</p>',
+						address: 'Zum Bernstein 5, Siegen',
+						html: '<p>Unser Headquarter</p><p>nicht anrufen!</p>',
 						popup: true
 					}
 						],
