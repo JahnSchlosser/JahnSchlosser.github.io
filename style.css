@@ -148,7 +148,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focu
 	position: relative;
 }
 .overlay,.overlay-home {
-	background: rgba(0, 0, 0, 0);
+	background: rgba(0, 0, 0, 0.5) url(assets/img/overlay/05.png);;
 	width: 100%;
 	position: absolute;
 	overflow:hidden;
@@ -156,7 +156,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focu
 	opacity: 0.4;
 }
 .overlay-home{
-	background: rgba(0, 0, 0, 0);
+	background: rgba(0, 0, 0, 0.5) url(assets/img/overlay/05.png);;
 	opacity: 0.4;
 }
 .parallax-bg {
@@ -174,12 +174,12 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focu
 	padding: 60px 0;
 }
 #pall-home {
-	background: url('assets/images/494.jpg');
+	background: url('assets/images/494.png');
 	background-attachment: fixed;
 	background-size: cover;
 }
 #quote-parallax{
-	background: url('assets/images/3.jpg');
+	background: url('assets/images/77.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -211,7 +211,7 @@ blockquote h3{
 	margin-left: 10px;
 }
 #office{
-	background: url('assets/images/3.jpg');
+	background: url('assets/images/494.png');
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -789,6 +789,31 @@ border-radius: 50%;
 	border-color: #00D8CC;
 	box-shadow:none
 }
+#ueberzeugt .btn-primary{
+	background: transparent;
+	margin: 40px auto 0;
+	height: auto;
+	z-index: 10;
+	position: relative;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: none;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 11px 25px 11px;
+	cursor: pointer;
+	border: 2px solid #fff;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	letter-spacing: 2px;
+}
+#ueberzeugt .btn-primary:hover{
+	background: #00D8CC;
+	color: #fff;
+	border-color: #00D8CC;
+	box-shadow:none
+}
 .startarrow {
 	margin-top: 60px;
 	font-size:100px;
@@ -797,12 +822,6 @@ border-radius: 50%;
 	color:#fff;
 }
 #startarrow{
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-delay: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-	-moz-animation-duration: 1.5s;
-    -moz-animation-delay: 1.5s;
-    -moz-animation-iteration-count: infinite;
 }
 .from-top {
 	top: -50px;
