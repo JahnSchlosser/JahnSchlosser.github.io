@@ -810,9 +810,9 @@ border-radius: 50%;
 }
 #ueberzeugt .btn-primary:hover{
 	background: #00D8CC;
-	color: #fff;
+	color: #000;
 	border-color: #00D8CC;
-	box-shadow:none
+	box-shadow:none;	
 }
 .startarrow {
 	margin-top: 60px;
