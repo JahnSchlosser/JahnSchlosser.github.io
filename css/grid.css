@@ -1,0 +1,147 @@
+/* `Container
+----------------------------------------------------------------------------------------------------*/
+
+.container_12 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+/* `Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+  display: inline;
+  float: left;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+
+/* `Grid >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+
+ .grid_1 {
+  width: 48px;
+}
+
+ .grid_2 {
+  width: 128px;
+}
+
+ .grid_3 {
+  width: 208px;
+}
+
+ .grid_4 {
+  width: 288px;
+}
+
+ .grid_5 {
+  width: 368px;
+}
+
+ .grid_6 {
+  width: 448px;
+}
+
+ .grid_7 {
+  width: 528px;
+}
+
+ .grid_8 {
+  width: 608px;
+}
+
+ .grid_9 {
+  width: 688px;
+}
+
+ .grid_10 {
+  width: 768px;
+}
+
+ .grid_11 {
+  width: 848px;
+}
+
+ .grid_12 {
+  width: 928px;
+}
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after,
+.container_12:before,
+.container_12:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.container_12:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix,
+.container_12 {
+  zoom: 1;
+}
+
+@media screen and (max-width: 959px) {
+
+	.container_12 {
+		width:90% !important; margin: 0 auto !important
+	}
+
+	.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
+	 width:100% !important; margin: 0 auto !important
+	}
+	
+	.home .blog {width:30% !important; margin-left:3% !important}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.home .blog {width:100% !important; margin-left:0% !important}
+}

@@ -1,0 +1,401 @@
+/*
+ *
+ *.||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+ *
+ *  .                                      '||            .           
+ *.||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....  
+ * ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...|| 
+ * ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
+ * '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
+ *      .. |      ||               ||                                 
+ *       ''      ''''             ''''                                
+ *
+ * URL ............ http://typeplate.com
+ * VERSION ........ 1.1.1
+ * Github ......... https://github.com/typeplate/typeplate.github.io
+ * AUTHORS ........ Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+ * LICENSE ........ Creative Commmons Attribution 3.0
+ * LICENSE URL .... http://creativecommons.org/licenses/by/3.0
+ *
+ * .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+ *
+ */
+
+/**
+ *
+ * =======================================================================
+	 Word Wrap
+ * =======================================================================
+ */
+
+.breakword {
+	word-wrap: break-word;
+}
+
+.normal-wrap {
+	word-wrap: normal;
+}
+
+.inherit-wrap {
+	word-wrap: auto;
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Base Type
+ * =======================================================================
+ *
+ */
+
+html {
+	font: normal 100%/1.9 Lato; /* base font size 18px with 1.65 line-height */
+}
+
+body {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+	color: #666;;
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Fine Print
+ * =======================================================================
+ */
+
+small {
+	font-size: 65%;
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Headings
+ * =======================================================================
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1;
+	margin: 0;
+	text-rendering: optimizeLegibility; /*  voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
+	color: #40454e;
+	font-weight:700;
+	padding:1em 0
+}
+
+
+
+h1 { font-size:1.5em; font-weight:900}
+h2 { font-size:1.33333em; font-weight:900}
+h3 { font-size:1.16667em; font-weight:900}
+h4 { font-size:1em; }
+
+h1 a, h2 a, h3 a, h4 a {border-bottom:0 }
+
+.special { font: normal 45px/1.5 Merriweather; color: white; padding-bottom: 1em}
+
+
+/**
+ *
+ * =======================================================================
+	 Paragraphs and Indentation
+ * =======================================================================
+ */
+
+p {
+	margin: auto auto 1.5em; /* bottom margin for paragraphs */
+}
+
+/**
+ *
+ * =======================================================================
+	 Lists
+ * =======================================================================
+ */
+
+ul, ol {
+	list-style-position: inside;
+	padding: 0;
+	margin: auto auto 1.5em;
+}
+/**
+ *
+ * =======================================================================
+	 Hyphens
+ * =======================================================================
+ */
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+	/* Accepted values: [ none | manual | auto ] */ /* http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation */
+	-webkit-hyphens: none; /* Safari 5.1 thru 6, iOS 4.2 thru 6 */
+	-moz-hyphens: none; /* Firefox 16 thru 20 */
+	-ms-hyphens: none; /* IE10 */
+	-o-hyphens: none; /* PRESTO...haha LOL */
+	hyphens: none;	 /* W3C standard */
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Code Blocks
+ * =======================================================================
+ */
+
+pre code {
+	word-wrap: normal;
+	white-space: -moz-pre-wrap;
+	white-space: pre-wrap; /* http://css-tricks.com/almanac/properties/w/whitespace */
+}
+
+pre {
+	white-space: pre;
+}
+
+code {
+	white-space: pre;
+	font-family: monospace;
+}
+
+
+/**
+ *
+ * =======================================================================
+ * Abbreviations Markup
+ * Extend this object into your markup
+
+	<abbr title="hyper text markup language">HMTL</abbr>
+
+ * Extend this object into your markup.
+ * =======================================================================
+ */
+
+abbr {
+	font-variant: small-caps; /* https://developer.mozilla.org/en-US/docs/CSS/font-variant */
+	font-weight: 600;
+	text-transform: lowercase;
+	color: #808080;
+}
+
+abbr[title]:hover {
+	cursor: help; /* cursor changed to a question mark when it has a title */
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Definition Lists
+ * =======================================================================
+ */
+
+/**
+ * Lining Definition Style Markup
+ *
+	<dl class="lining">
+		<dt><b></b></dt>
+		<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.lining dt,
+.lining dd {
+	display: inline;
+	margin: 0;
+}
+.lining dt + dt:before,
+.lining dd + dt:before {
+	content: "\A";
+	white-space: pre;
+}
+.lining dd + dd:before {
+	content: ", ";
+}
+.lining dd:before {
+	content: ": ";
+	margin-left: -0.2em;
+}
+
+
+/**
+ * Dictionary Definition Style Markup
+ *
+	<dl class="dictionary-style">
+		<dt><b></b></dt>
+			<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.dictionary-style dt {
+	display: inline;
+	counter-reset: definitions;
+}
+.dictionary-style dt + dt:before {
+	content: ", ";
+	margin-left: -0.2em;
+}
+.dictionary-style dd {
+	display: block;
+	counter-increment: definitions;
+}
+.dictionary-style dd:before {
+	content: counter(definitions, decimal) ". ";
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Blockquotes
+ * =======================================================================
+ */
+
+/**
+ * Blockquote Markup
+ *
+	<figure>
+		<blockquote class="blockquote" cite="">
+			<p></p>
+		</blockquote>
+		<figcaption>
+			<cite>
+				<small><a href=""></a></small>
+			</cite>
+		</figcaption>
+	</figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+
+.blockquote p:last-of-type {
+	margin-bottom: -0.825em;
+}
+
+.blockquote + figcaption {
+	display: block;
+	font-size: inherit;
+	text-align: right;
+}
+
+.blockquote + figcaption:before {
+	content: "-"; /* "-" is your citation flourish */
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Pull Quotes
+ * =======================================================================
+ */
+
+/**
+ * Pull Quotes Markup
+ *
+	<aside class="pull-quote">
+		<blockquote>
+			<p></p>
+		</blockquote>
+	</aside>
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+.pull-quote {
+	position: relative;
+	padding: 1em;
+}
+.pull-quote:before,
+.pull-quote:after {
+	height: 1em;
+	opacity: 0.15;
+	position: absolute;
+	font-size: 4em;
+	color: #dc976e;
+}
+.pull-quote:before {
+	content: '“';
+	top: 0;
+	left: 0;
+}
+.pull-quote:after {
+	content: '”';
+	bottom: 0;
+	right: 0;
+}
+
+
+/**
+ *
+ * =======================================================================
+	 Figures
+ * =======================================================================
+ */
+
+/**
+ * Figures Markup
+ *
+	<figure>
+		<figcaption>
+			<strong>Fig. 4.2 | </strong>Type Anatomy, an excerpt from Mark Boulton's book<cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite>
+		</figcaption>
+	</figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+
+
+/**
+ *
+ * =======================================================================
+	 Foot Notes
+ * =======================================================================
+ */
+
+/**
+ * Footnote Markup : Replace 'X' with your unique number for each footnote
+ *
+	<article>
+		<p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
+		<footer>
+			<ol class="foot-notes">
+				<li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
+			</ol>
+		</footer>
+	</article>
+ *
+ * Extend this object into your markup.
+ *
+ */
