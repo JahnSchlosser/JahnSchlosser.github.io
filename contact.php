@@ -6,8 +6,8 @@ if($_POST)
         die();
     } 
 	
-	$to_Email   	= "email@dannycooper.com"; //Replace with recipient email address
-	$subject        = 'Contact Form Submit'; //Subject line for emails
+	$to_Email   	= "jahn.schlosser@gmail.com"; //Replace with recipient email address
+	$subject        = 'Contact Form Submit | from jahnschlosser.com'; //Subject line for emails
 	
 	//check $_POST vars are set, exit if any missing
 	if(!isset($_POST["userName"]) || !isset($_POST["userEmail"]) || !isset($_POST["userMessage"]))
