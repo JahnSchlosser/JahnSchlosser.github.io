@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jahn Schlosser – Experto en pagos, docente y conferenciante. Team Lead Customer Success Banks en Omikron, Colonia." />
+  <title>Jahn Schlosser.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #f4f0e8; --cream-dk: #e8e2d4; --ink: #1a1814; --ink-soft: #4a4540;
+      --bronze: #8c6d3f; --bronze-lt: #b8914f; --navy: #1e2d42; --rule: rgba(26,24,20,0.12);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --max-w: 1100px; --pad-x: clamp(1.5rem, 5vw, 5rem);
+      color-scheme: only light;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--font-body); font-weight: 300; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+    a { color: inherit; text-decoration: none; }
+    hr.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    .fade { opacity:0; animation: fadeUp 0.8s ease forwards; }
+    .fade-1{animation-delay:.1s} .fade-2{animation-delay:.25s} .fade-3{animation-delay:.4s}
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.4rem var(--pad-x); display:flex; justify-content:space-between; align-items:center; background:var(--cream); border-bottom:1px solid transparent; transition:border-color .3s,background .3s; }
+    nav.scrolled { border-color:var(--rule); background:rgba(244,240,232,0.95); backdrop-filter:blur(8px); }
+    .nav-logo { font-family:var(--font-display); font-size:1.3rem; font-weight:600; }
+    .nav-links { display:flex; gap:2rem; list-style:none; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; }
+    .nav-links a { color:var(--ink-soft); transition:color .2s; }
+    .nav-links a:hover { color:var(--bronze); }
+    .lang-switcher { display:flex; gap:.5rem; }
+    .lang-btn { font-size:1.25rem; letter-spacing:0; text-transform:none; color:var(--ink-soft); border:1px solid var(--rule); padding:.2rem .45rem; border-radius:4px; transition:all .2s; cursor:pointer; line-height:1; }
+    .lang-btn:hover,.lang-btn.active { border-color:var(--bronze); color:var(--bronze); }
+    .lang-btn.active { background:rgba(140,109,63,0.08); }
+    #hero { min-height:100svh; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:4rem; padding-top:6rem; }
+    .hero-text { padding:6rem var(--pad-x) 4rem; }
+    .hero-eyebrow { font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--bronze); margin-bottom:1.5rem; }
+    h1.hero-name { font-family:var(--font-display); font-size:clamp(3.5rem,7vw,6rem); font-weight:300; line-height:1.02; margin-bottom:1.8rem; }
+    h1.hero-name em { font-style:italic; color:var(--bronze); }
+    .hero-tagline { font-family:var(--font-display); font-size:clamp(1.1rem,1.8vw,1.35rem); font-weight:300; font-style:italic; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem; max-width:420px; }
+    .hero-roles { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+    .hero-role-pill { font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; background:rgba(140,109,63,0.1); color:var(--bronze); padding:.3rem .8rem; border-radius:2px; }
+    .hero-cta { display:inline-flex; align-items:center; gap:.7rem; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; color:var(--navy); border-bottom:1px solid var(--navy); padding-bottom:.2rem; transition:all .25s; }
+    .hero-cta:hover { color:var(--bronze); border-color:var(--bronze); gap:1rem; }
+    .hero-image-wrap { align-self:stretch; display:flex; align-items:flex-end; padding:6rem var(--pad-x) 4rem 0; }
+    .hero-image-frame { position:relative; width:100%; max-width:440px; margin-left:auto; }
+    .hero-image-frame::before { content:''; position:absolute; inset:-16px -16px 16px 16px; border:1px solid var(--bronze-lt); opacity:.4; z-index:0; }
+    .hero-image-frame img { display:block; width:100%; aspect-ratio:3/4; object-fit:cover; position:relative; z-index:1; filter:sepia(8%) contrast(1.04); }
+    .section-header { display:flex; align-items:center; gap:1.5rem; margin-bottom:3.5rem; }
+    .section-no { font-family:var(--font-display); font-size:.8rem; color:var(--bronze); letter-spacing:.1em; flex-shrink:0; }
+    .section-title { font-family:var(--font-display); font-size:clamp(2rem,4vw,2.8rem); font-weight:300; }
+    .section-title em { font-style:italic; color:var(--bronze); }
+    .section-line { flex:1; height:1px; background:var(--rule); }
+    #about { padding:8rem 0; }
+    .about-grid { display:grid; grid-template-columns:5fr 4fr; gap:6rem; align-items:start; }
+    .bio-text p { font-family:var(--font-display); font-size:clamp(1.1rem,1.8vw,1.28rem); font-weight:300; line-height:1.75; color:var(--ink-soft); margin-bottom:1.5rem; }
+    .bio-text p:first-child { font-size:clamp(1.2rem,2vw,1.5rem); color:var(--ink); }
+    .bio-text p strong { font-weight:400; color:var(--ink); }
+    .sidebar-block { margin-bottom:2.8rem; }
+    .sidebar-label { font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--bronze); margin-bottom:.8rem; }
+    .sidebar-list { list-style:none; }
+    .sidebar-list li { font-size:.9rem; color:var(--ink-soft); padding:.45rem 0; border-bottom:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; }
+    .sidebar-list li span { font-size:.75rem; color:var(--bronze); opacity:.7; }
+    #expertise { padding:6rem 0; background:var(--navy); color:var(--cream); }
+    #expertise .section-title { color:var(--cream); }
+    #expertise .section-no { color:var(--bronze-lt); }
+    #expertise .section-line { background:rgba(244,240,232,.12); }
+    #expertise .tag { background:rgba(255,255,255,0.1); color:rgba(244,240,232,0.85); border:1px solid rgba(244,240,232,0.15); }
+    .expertise-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    .expertise-card { padding:2.5rem 2rem; background:rgba(255,255,255,.03); border:1px solid rgba(244,240,232,.07); transition:background .3s; position:relative; overflow:hidden; }
+    .expertise-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--bronze); transform:scaleX(0); transform-origin:left; transition:transform .35s ease; }
+    .expertise-card:hover { background:rgba(255,255,255,.06); }
+    .expertise-card:hover::after { transform:scaleX(1); }
+    .expertise-icon { font-size:1.6rem; margin-bottom:1.2rem; display:block; }
+    .expertise-card h3 { font-family:var(--font-display); font-size:1.3rem; font-weight:400; margin-bottom:.8rem; color:var(--cream); }
+    .expertise-card p { font-size:.88rem; color:rgba(244,240,232,.55); line-height:1.65; }
+    .expertise-tags { margin-top:1.2rem; display:flex; flex-wrap:wrap; gap:.4rem; }
+    .tag { font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; background:rgba(140,109,63,.2); color:var(--bronze-lt); padding:.2rem .55rem; border-radius:2px; }
+    #speaker { padding:8rem 0; position:relative; overflow:hidden; }
+    .speaker-bg { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&auto=format&fit=crop&q=60') center/cover no-repeat; opacity:.07; }
+    .speaker-inner { position:relative; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
+    .speaker-text p { font-family:var(--font-display); font-size:clamp(1.05rem,1.7vw,1.25rem); font-weight:300; color:var(--ink-soft); line-height:1.75; margin-bottom:1.5rem; }
+    .speaker-topics { list-style:none; margin-bottom:2rem; }
+    .speaker-topics li { font-size:.9rem; color:var(--ink-soft); padding:.55rem 0; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:.8rem; }
+    .speaker-topics li::before { content:'→'; color:var(--bronze); font-size:.85rem; flex-shrink:0; }
+    .speaker-cta { display:inline-flex; align-items:center; gap:.8rem; background:var(--navy); color:var(--cream); padding:1rem 2rem; font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; transition:all .25s; }
+    .speaker-cta:hover { background:var(--bronze); }
+    .speaker-visual { position:relative; }
+    .speaker-visual img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; filter:sepia(12%) contrast(1.05); }
+    .speaker-visual::before { content:''; position:absolute; inset:-12px -12px 12px 12px; border:1px solid var(--bronze-lt); opacity:.35; z-index:-1; }
+    .speaker-quote { margin-top:1.8rem; padding:1.5rem; background:rgba(140,109,63,.06); border-left:2px solid var(--bronze); }
+    .speaker-quote p { font-family:var(--font-display); font-size:1.05rem; font-style:italic; color:var(--ink-soft); }
+    .speaker-quote cite { font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--bronze); display:block; margin-top:.5rem; }
+    #journey { padding:8rem 0; }
+    .timeline { position:relative; padding-left:2.5rem; }
+    .timeline::before { content:''; position:absolute; top:0; bottom:0; left:0; width:1px; background:var(--rule); }
+    .timeline-item { position:relative; margin-bottom:3rem; padding-left:2rem; }
+    .timeline-item::before { content:''; position:absolute; left:-2.5rem; top:.4rem; width:9px; height:9px; border-radius:50%; background:var(--cream); border:1px solid var(--bronze); box-shadow:0 0 0 3px var(--cream); }
+    .timeline-item.current::before { background:var(--bronze); }
+    .timeline-date { font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze); margin-bottom:.3rem; }
+    .timeline-role { font-family:var(--font-display); font-size:1.25rem; font-weight:400; margin-bottom:.15rem; }
+    .timeline-company { font-size:.88rem; color:var(--ink-soft); margin-bottom:.5rem; }
+    .timeline-desc { font-size:.88rem; color:var(--ink-soft); max-width:560px; }
+    #human { padding:6rem 0; background:var(--cream-dk); }
+    .human-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--rule); }
+    .human-card { background:var(--cream-dk); padding:2.8rem 2rem; text-align:center; transition:background .25s; }
+    .human-card:hover { background:var(--cream); }
+    .human-glyph { font-size:2rem; margin-bottom:1rem; display:block; }
+    .human-card h4 { font-family:var(--font-display); font-size:1.2rem; font-weight:400; margin-bottom:.5rem; }
+    .human-card p { font-size:.83rem; color:var(--ink-soft); line-height:1.6; }
+    #connect { padding:8rem 0; }
+    .connect-inner { display:grid; grid-template-columns:1fr 1fr; gap:8rem; align-items:center; }
+    .connect-text h2 { font-family:var(--font-display); font-size:clamp(2.2rem,4vw,3.2rem); font-weight:300; line-height:1.15; margin-bottom:1.5rem; }
+    .connect-text h2 em { font-style:italic; color:var(--bronze); }
+    .connect-text p { color:var(--ink-soft); font-size:.95rem; max-width:380px; }
+    .connect-links { display:flex; flex-direction:column; gap:1.2rem; }
+    .connect-link { display:flex; align-items:center; gap:1.2rem; padding:1.4rem 1.8rem; border:1px solid var(--rule); transition:all .25s; }
+    .connect-link:hover { border-color:var(--bronze); background:rgba(140,109,63,.04); }
+    .connect-link-icon { width:36px; height:36px; display:flex; align-items:center; justify-content:center; color:var(--bronze); flex-shrink:0; }
+    .connect-link-text { flex:1; }
+    .connect-link-label { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); display:block; }
+    .connect-link-value { font-family:var(--font-display); font-size:1.1rem; display:block; }
+    .connect-link-arrow { color:var(--rule); transition:color .2s,transform .2s; }
+    .connect-link:hover .connect-link-arrow { color:var(--bronze); transform:translateX(4px); }
+    footer { padding:2.5rem var(--pad-x); border-top:1px solid var(--rule); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-copy { font-size:.78rem; color:var(--ink-soft); opacity:.6; }
+    .footer-links { display:flex; gap:1.5rem; }
+    .footer-links a { font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); opacity:.6; transition:opacity .2s,color .2s; }
+    .footer-links a:hover { opacity:1; color:var(--bronze); }
+    @media(max-width:900px) {
+      #hero { grid-template-columns:1fr; min-height:auto; padding:8rem 0 4rem; }
+      .hero-image-wrap { display:none; }
+      .about-grid { grid-template-columns:1fr; gap:3rem; }
+      .expertise-grid { grid-template-columns:1fr; }
+      .speaker-inner { grid-template-columns:1fr; gap:3rem; }
+      .human-grid { grid-template-columns:1fr 1fr; }
+      .connect-inner { grid-template-columns:1fr; gap:3rem; }
+    }
+    @media(max-width:600px) { .nav-links { display:none; } .human-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Jahn Schlosser.</a>
+  <ul class="nav-links">
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#expertise">Experiencia</a></li>
+    <li><a href="#speaker">Conferencias</a></li>
+    <li><a href="#journey">Trayectoria</a></li>
+    <li><a href="#connect">Contacto</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <a href="index.html" class="lang-btn" title="English">🇬🇧</a>
+    <a href="index_de.html" class="lang-btn" title="Deutsch">🇩🇪</a>
+    <a href="index_es.html" class="lang-btn active" title="Español">🇪🇸</a>
+    <a href="index_ja.html" class="lang-btn" title="日本語">🇯🇵</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-text fade fade-1">
+    <p class="hero-eyebrow">Colonia, Alemania</p>
+    <h1 class="hero-name">Jahn<br /><em>Schlosser.</em></h1>
+    <p class="hero-tagline">Experto en pagos, docente y defensor convencido de que los sistemas complejos pueden — y deben — funcionar realmente para las personas.</p>
+    <div class="hero-roles">
+      <span class="hero-role-pill">Team Lead</span>
+      <span class="hero-role-pill">Experto en Pagos</span>
+      <span class="hero-role-pill">Docente</span>
+      <span class="hero-role-pill">Conferenciante</span>
+    </div>
+    <a href="#speaker" class="hero-cta">
+      Invítame a hablar
+      <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="hero-image-wrap fade fade-3">
+    <div class="hero-image-frame">
+      <img src="img/jahn-schlosser.jpg" alt="Jahn Schlosser" />
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section id="about">
+  <div class="container">
+    <div class="section-header fade fade-1">
+      <span class="section-no">01</span>
+      <h2 class="section-title">Sobre <em>mí</em></h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="about-grid">
+      <div class="bio-text fade fade-2">
+        <p>Durante casi dos décadas he trabajado en la intersección entre la infraestructura bancaria y la experiencia humana — ese lugar donde los flujos de pago, la complejidad regulatoria y las necesidades reales de las personas colisionan.</p>
+        <p>Tras estudiar en Heidelberg, perfeccioné mi capacidad analítica en <strong>PwC</strong> y desarrollé un profundo conocimiento operativo en el <strong>Zürcher Kantonalbank</strong>, en Suiza. Entre medias, fundé y dirigí mi propia empresa — <strong>SDS, Schlosser Data Services</strong> — hasta su adquisición en 2015.</p>
+        <p>Hoy lidero el equipo de <strong>Customer Success Banks</strong> en <strong>Omikron Systemhaus</strong> en Colonia, acompañando a instituciones financieras en la navegación del mundo del e-banking corporativo en constante transformación. Ya sea guiando la implantación de Instant Payments, la adopción de VOP o repensando cómo multicash puede servir a la próxima generación de equipos de tesorería — soy la persona que se sitúa entre la tecnología y las personas que dependen de ella.</p>
+        <p>Paralelamente, soy docente en la <strong>IU Universidad Internacional de Ciencias Aplicadas</strong>, donde imparto Business English y Change Management. Ver a un estudiante conectar conceptos de liderazgo y lenguaje profesional con su propia realidad laboral es algo que nunca pierde valor.</p>
+        <p>Cuando me alejo de todo eso — hago pan, escribo, surfeo cuando la geografía lo permite, y soy marido y padre haciendo lo mejor que puedo en Colonia.</p>
+      </div>
+      <div class="about-sidebar fade fade-3">
+        <div class="sidebar-block">
+          <p class="sidebar-label">Posición actual</p>
+          <ul class="sidebar-list">
+            <li>Team Lead Customer Success Banks <span>Omikron</span></li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <p class="sidebar-label">También</p>
+          <ul class="sidebar-list">
+            <li>Docente — Business English & Change Management <span>IU</span></li>
+            <li>Conferenciante</li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <p class="sidebar-label">Trayectoria</p>
+          <ul class="sidebar-list">
+            <li>PwC</li>
+            <li>Zürcher Kantonalbank</li>
+            <li>SDS – Schlosser Data Services <span>Fundador</span></li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <p class="sidebar-label">Formación</p>
+          <ul class="sidebar-list">
+            <li>Univ. Ruprecht-Karls de Heidelberg</li>
+            <li>HCI — Stanford University <span>MOOC</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section id="expertise">
+  <div class="container">
+    <div class="section-header fade fade-1">
+      <span class="section-no">02</span>
+      <h2 class="section-title">Áreas de <em>especialización</em></h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="expertise-grid fade fade-2">
+      <div class="expertise-card">
+        <span class="expertise-icon">⚡</span>
+        <h3>Pagos Instantáneos</h3>
+        <p>Amplia experiencia práctica en la implantación de infraestructuras de pago en tiempo real en el sector bancario europeo, desde la interpretación regulatoria hasta la puesta en producción.</p>
+        <div class="expertise-tags"><span class="tag">SEPA Instant</span><span class="tag">Regulación UE</span><span class="tag">RTP</span></div>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">✔</span>
+        <h3>Verificación del Beneficiario</h3>
+        <p>Acompañé a bancos y empresas en la implementación de VOP — uno de los cambios estructurales más significativos en los procesos de pago europeos de los últimos años.</p>
+        <div class="expertise-tags"><span class="tag">VOP</span><span class="tag">Validación IBAN</span><span class="tag">API</span></div>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">🏦</span>
+        <h3>Banca Electrónica</h3>
+        <p>Años de trabajo en producto y éxito de clientes con multicash — una de las plataformas de e-banking corporativo más consolidadas de Europa — en más de 20 países.</p>
+        <div class="expertise-tags"><span class="tag">multicash</span><span class="tag">EBICS</span><span class="tag">ISO 20022</span></div>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">⚙</span>
+        <h3>Infraestructura de Pagos</h3>
+        <p>Conocimiento integral de arquitecturas de payment hub, conectividad SWIFT y flujos de trabajo de tesorería corporativa.</p>
+        <div class="expertise-tags"><span class="tag">SWIFT</span><span class="tag">Payment Hub</span><span class="tag">eBAM</span></div>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">🎓</span>
+        <h3>Docencia</h3>
+        <p>Docente en IU: impartición de Business English y Change Management en el ámbito universitario — competencia lingüística profesional y transformación organizacional para estudiantes de grado.</p>
+        <div class="expertise-tags"><span class="tag">Business English</span><span class="tag">Change Management</span><span class="tag">IU</span></div>
+      </div>
+      <div class="expertise-card">
+        <span class="expertise-icon">◻</span>
+        <h3>UX y Requisitos</h3>
+        <p>Formación formal en Interacción Persona-Ordenador, con años de experiencia práctica diseñando interfaces de e-banking y sistemas de flujo de trabajo complejos.</p>
+        <div class="expertise-tags"><span class="tag">UX Design</span><span class="tag">Ing. de Requisitos</span><span class="tag">Diseño de Procesos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speaker">
+  <div class="speaker-bg"></div>
+  <div class="container">
+    <div class="section-header fade fade-1">
+      <span class="section-no">03</span>
+      <h2 class="section-title">En el <em>escenario</em></h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="speaker-inner">
+      <div class="speaker-text fade fade-2">
+        <p>El panorama europeo de pagos se transforma a gran velocidad — y la brecha entre lo que es técnicamente posible, lo que exigen los reguladores y lo que los bancos realmente entienden sigue siendo enorme. Ahí es donde hablo.</p>
+        <p>Mis ponencias están construidas sobre años de experiencia en primera línea: implantaciones de Instant Payments a escala, el proceso de adopción de VOP con clientes bancarios reales, la migración a ISO 20022 vista desde dentro. Sin teoría por la teoría — solo perspectiva honesta y clara desde el terreno.</p>
+        <ul class="speaker-topics">
+          <li>SEPA Instant Payments — de la regulación a la realidad</li>
+          <li>Verification of Payee: los errores que cometen los bancos</li>
+          <li>Migración ISO 20022 — lecciones prácticas</li>
+          <li>El futuro del e-banking corporativo</li>
+          <li>Customer success en entornos de software bancario complejo</li>
+          <li>Transformación digital en la gestión de tesorería</li>
+        </ul>
+        <a href="https://linkedin.com/in/jahnschlosser" target="_blank" rel="noopener" class="speaker-cta">
+          Invítame a hablar
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M11 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="speaker-visual fade fade-3">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=70" alt="Conferencia" />
+        <div class="speaker-quote">
+          <p>Presencia regular en eventos del sector y conferencias bancarias por toda Europa — sobre Instant Payments, Verification of Payee y el futuro del e-banking corporativo.</p>
+          <cite>Diversos eventos del sector · Europa</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section id="journey">
+  <div class="container">
+    <div class="section-header fade fade-1">
+      <span class="section-no">04</span>
+      <h2 class="section-title">La <em>trayectoria</em></h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="timeline fade fade-2">
+      <div class="timeline-item current">
+        <p class="timeline-date">2015 – Presente</p>
+        <h3 class="timeline-role">Team Lead Customer Success Banks</h3>
+        <p class="timeline-company">Omikron Systemhaus GmbH & Co. KG — Colonia</p>
+        <p class="timeline-desc">Liderazgo del equipo de customer success orientado a bancos para multicash, la plataforma de e-banking corporativo líder en Europa. Impulso de la adopción de Instant Payments, VOP e ISO 20022 en un amplio portfolio de instituciones financieras europeas. Speaker habitual en eventos del sector y conferencias bancarias.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Continuo</p>
+        <h3 class="timeline-role">Docente — Banca Digital y Sistemas de Pago</h3>
+        <p class="timeline-company">IU International University of Applied Sciences</p>
+        <p class="timeline-desc">Impartición de módulos de Business English y Change Management a nivel universitario. Enfoque práctico y aplicado — combinando competencia lingüística profesional con marcos de transformación organizacional, apoyados en años de experiencia corporativa real.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Hasta 2015</p>
+        <h3 class="timeline-role">Fundador y Director General</h3>
+        <p class="timeline-company">SDS – Schlosser Data Services</p>
+        <p class="timeline-desc">Creación y escalado de una consultora de servicios de datos especializada en banca y servicios financieros. Vendida con éxito en marzo de 2015.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Anteriormente</p>
+        <h3 class="timeline-role">Consultor y Profesional Bancario</h3>
+        <p class="timeline-company">PwC · Zürcher Kantonalbank</p>
+        <p class="timeline-desc">Bases analíticas en PwC y experiencia operativa en banca en el Zürcher Kantonalbank de Zúrich — conocimientos amplios en auditoría, consultoría y procesos bancarios fundamentales.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">2012</p>
+        <h3 class="timeline-role">Interacción Persona-Ordenador</h3>
+        <p class="timeline-company">Stanford University — MOOC</p>
+        <p class="timeline-desc">Formación formal en HCI — la base conceptual para un enfoque de toda la carrera en el diseño de sistemas que realmente funcionen para las personas.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">Formación</p>
+        <h3 class="timeline-role">Estudios universitarios</h3>
+        <p class="timeline-company">Ruprecht-Karls-Universität Heidelberg</p>
+        <p class="timeline-desc">Base académica en una de las universidades más antiguas y prestigiosas de Alemania.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section id="human">
+  <div class="container">
+    <div class="section-header fade fade-1" style="margin-bottom:3rem;">
+      <span class="section-no">05</span>
+      <h2 class="section-title">Más allá de la <em>oficina</em></h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="human-grid fade fade-2">
+      <div class="human-card">
+        <span class="human-glyph">🍞</span>
+        <h4>Panadero</h4>
+        <p>Masa madre, paciencia y la silenciosa satisfacción de una buena corteza. El antídoto a la jornada laboral.</p>
+      </div>
+      <div class="human-card">
+        <span class="human-glyph">🌊</span>
+        <h4>Surfista</h4>
+        <p>Siempre que la geografía lo permite. Hay una claridad especial cuando estás completamente enfocado en una ola.</p>
+      </div>
+      <div class="human-card">
+        <span class="human-glyph">👨‍👩‍👧‍👦</span>
+        <h4>Marido y Padre</h4>
+        <p>Base de operaciones: Colonia. Donde ocurre el trabajo realmente importante cada día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section id="connect">
+  <div class="container">
+    <div class="connect-inner">
+      <div class="connect-text fade fade-1">
+        <h2>Hablemos de <em>pagos.</em></h2>
+        <p>Si estás navegando la implantación de Instant Payments, buscas un conferenciante para tu evento bancario, o simplemente quieres intercambiar ideas — escríbeme en LinkedIn.</p>
+      </div>
+      <div class="connect-links fade fade-2">
+        <a href="https://linkedin.com/in/jahnschlosser" target="_blank" rel="noopener" class="connect-link">
+          <span class="connect-link-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="4" fill="currentColor"/>
+              <path d="M7.5 9.5H5V19H7.5V9.5Z" fill="white"/>
+              <circle cx="6.25" cy="6.75" r="1.5" fill="white"/>
+              <path d="M19 19H16.5V14C16.5 12.9 15.85 12 14.75 12C13.65 12 13 12.9 13 14V19H10.5V9.5H13V10.75C13.6 9.85 14.7 9.25 16 9.25C17.8 9.25 19 10.55 19 12.75V19Z" fill="white"/>
+            </svg></span>
+          <span class="connect-link-text">
+            <span class="connect-link-label">Conectar en</span>
+            <span class="connect-link-value">LinkedIn</span>
+          </span>
+          <svg class="connect-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/jahnschlosser" target="_blank" rel="noopener" class="connect-link">
+          <span class="connect-link-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+          <span class="connect-link-text">
+            <span class="connect-link-label">Contrátame como</span>
+            <span class="connect-link-value">Conferenciante</span>
+          </span>
+          <svg class="connect-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-copy">© 2026 Jahn Schlosser — Colonia, Alemania</p>
+  <nav class="footer-links">
+    <a href="https://linkedin.com/in/jahnschlosser" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Privacidad</a>
+  </nav>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.animationPlayState='running'; observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade').forEach(el => {
+    if (!el.closest('#hero')) el.style.animationPlayState = 'paused';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
