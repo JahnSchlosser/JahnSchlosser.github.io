@@ -32,11 +32,14 @@
     .nav-links { display:flex; gap:1.8rem; list-style:none; font-size:.8rem; }
     .nav-links a { color:var(--ink-soft); transition:color .2s; }
     .nav-links a:hover { color:var(--bronze); }
-    .lang-switcher { display:flex; gap:.5rem; }
-    .lang-btn { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); padding:.25rem .4rem; border-radius:3px; transition:all .2s; cursor:pointer; line-height:1; opacity:0.7; }
-    .lang-btn:hover, .lang-btn.active { border-color:var(--bronze); opacity:1; box-shadow:0 0 0 1px var(--bronze); }
-    .lang-btn:hover,.lang-btn.active { border-color:var(--bronze); color:var(--bronze); }
-    .lang-btn.active { background:rgba(140,109,63,0.08); }
+    .lang-switcher { display:flex; gap:.4rem; align-items:center; }
+    .lang-btn { display:inline-flex; align-items:center; justify-content:center; border:2px solid transparent; padding:.2rem; border-radius:3px; transition:all .2s; cursor:pointer; background:none; }
+    .lang-btn:hover { border-color:var(--bronze-lt); }
+    .lang-btn.active { border-color:var(--bronze); box-shadow:0 0 0 1px var(--bronze); }
+    
+    
+    
+    
     #hero { min-height:100svh; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:4rem; padding-top:6rem; }
     .hero-text { padding:6rem var(--pad-x) 4rem; }
     .hero-eyebrow { font-size:.8rem; letter-spacing:.06em; color:var(--bronze); margin-bottom:1.5rem; }
@@ -156,10 +159,10 @@
     <li><a href="#connect">お問い合わせ</a></li>
   </ul>
   <div class="lang-switcher">
-    <a href="index.html" class="lang-btn" title="English"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#012169"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#fff" stroke-width="3"/><path d="M0,0 L20,14 M20,0 L0,14" stroke="#C8102E" stroke-width="1.8"/><path d="M10,0 V14 M0,7 H20" stroke="#fff" stroke-width="5"/><path d="M10,0 V14 M0,7 H20" stroke="#C8102E" stroke-width="3"/></svg></a>
-    <a href="index_de.html" class="lang-btn" title="Deutsch"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="5" fill="#000"/><rect y="5" width="20" height="4" fill="#D00"/><rect y="9" width="20" height="5" fill="#FFCE00"/></svg></a>
-    <a href="index_es.html" class="lang-btn" title="Español"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg></a>
-    <a href="index_ja.html" class="lang-btn active" title="日本語"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="#fff"/><circle cx="10" cy="7" r="4" fill="#BC002D"/></svg></a>
+    <a href="index.html" class="lang-btn" title="English"><svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="24" height="16" fill="#012169"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#fff" stroke-width="3.5"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#C8102E" stroke-width="2.2"/><path d="M12,0 V16 M0,8 H24" stroke="#fff" stroke-width="5.5"/><path d="M12,0 V16 M0,8 H24" stroke="#C8102E" stroke-width="3.5"/></svg></a>
+    <a href="index_de.html" class="lang-btn" title="Deutsch"><svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="24" height="6" y="0" fill="#000"/><rect width="24" height="5" y="6" fill="#D00"/><rect width="24" height="5" y="11" fill="#FFCE00"/></svg></a>
+    <a href="index_es.html" class="lang-btn" title="Español"><svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="24" height="16" fill="#c60b1e"/><rect width="24" height="8" y="4" fill="#ffc400"/></svg></a>
+    <a href="index_ja.html" class="lang-btn active" title="日本語"><svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="24" height="16" fill="#f5f5f5" stroke="#ddd" stroke-width="0.5"/><circle cx="12" cy="8" r="4.5" fill="#BC002D"/></svg></a>
   </div>
 </nav>
 
@@ -442,7 +445,7 @@
   <p class="footer-copy">© 2026 Jahn Schlosser — ドイツ・ケルン</p>
   <nav class="footer-links">
     <a href="https://linkedin.com/in/jahnschlosser" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="contact.html">プライバシー</a>
+    <a href="contact_ja.html">プライバシー</a>
   </nav>
 </footer>
 
