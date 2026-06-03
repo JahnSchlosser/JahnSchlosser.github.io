@@ -18,7 +18,7 @@
       --max-w: 1100px; --pad-x: clamp(1.5rem, 5vw, 5rem);
       color-scheme: only light;
     }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body { background: var(--cream); color: var(--ink); font-family: var(--font-body); font-weight: 300; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
     a { color: inherit; text-decoration: none; }
@@ -28,8 +28,8 @@
     .fade-1{animation-delay:.1s} .fade-2{animation-delay:.25s} .fade-3{animation-delay:.4s} .fade-4{animation-delay:.6s}
 
     /* NAV */
-    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.4rem var(--pad-x); display:flex; justify-content:space-between; align-items:center; background:var(--cream); border-bottom:1px solid transparent; transition:border-color .3s,background .3s; }
-    nav.scrolled { border-color:var(--rule); background:rgba(244,240,232,0.95); backdrop-filter:blur(8px); }
+    #nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.4rem var(--pad-x); display:flex; justify-content:space-between; align-items:center; background:var(--cream); border-bottom:1px solid transparent; transition:border-color .3s,background .3s; }
+    #nav.scrolled { border-color:var(--rule); background:rgba(244,240,232,0.95); backdrop-filter:blur(8px); }
     .nav-logo { font-family:var(--font-display); font-size:1.3rem; font-weight:600; }
     .nav-links { display:flex; gap:2rem; list-style:none; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; }
     .nav-links a { color:var(--ink-soft); transition:color .2s; }
@@ -173,19 +173,37 @@
       .nav-links { display:none; }
       .human-grid { grid-template-columns:1fr; }
     }
+
+    html { scroll-padding-top: 92px; }
+    section { scroll-margin-top: 92px; }
+    .nav-toggle { display:none; width:38px; height:34px; border:1px solid var(--rule); background:transparent; border-radius:3px; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+    .nav-toggle span { width:18px; height:1px; background:var(--ink-soft); display:block; transition:transform .2s, opacity .2s; }
+    #nav.nav-open .nav-toggle span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    #nav.nav-open .nav-toggle span:nth-child(2) { opacity:0; }
+    #nav.nav-open .nav-toggle span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+    @media(max-width:720px) {
+      #nav { flex-wrap:wrap; gap:1rem; }
+      .nav-logo { flex:1; }
+      .nav-toggle { display:inline-flex; }
+      .lang-switcher { margin-left:auto; }
+      .nav-links { order:4; width:100%; display:none; flex-direction:column; gap:.15rem; padding:1rem 0 .2rem; border-top:1px solid var(--rule); }
+      #nav.nav-open .nav-links { display:flex; }
+      .nav-links a { display:block; padding:.45rem 0; }
+    }
   </style>
 </head>
 <body>
 
 <nav id="nav">
   <a href="#hero" class="nav-logo">Jahn Schlosser.</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="primary-navigation">
     <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#speaker">Speaking</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#connect">Connect</a></li>
   </ul>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
   <div class="lang-switcher">
     <a href="index.html" class="lang-btn active" title="English"><svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="24" height="16" fill="#012169"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#fff" stroke-width="3.5"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#C8102E" stroke-width="2.2"/><path d="M12,0 V16 M0,8 H24" stroke="#fff" stroke-width="5.5"/><path d="M12,0 V16 M0,8 H24" stroke="#C8102E" stroke-width="3.5"/></svg></a>
     <a href="index_de.html" class="lang-btn" title="Deutsch"><svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="24" height="6" y="0" fill="#000"/><rect width="24" height="5" y="6" fill="#D00"/><rect width="24" height="5" y="11" fill="#FFCE00"/></svg></a>
@@ -488,6 +506,18 @@
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navToggle?.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.forEach(link => link.addEventListener('click', () => {
+    nav.classList.remove('nav-open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  }));
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.style.animationPlayState='running'; observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
